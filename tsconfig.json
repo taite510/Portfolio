@@ -4,15 +4,17 @@
     "target": "es6",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react",
-    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "lib": ["dom", "es6"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
+    "noImplicitThis": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "jsxImportSource": "@emotion/react"
   }
 }
