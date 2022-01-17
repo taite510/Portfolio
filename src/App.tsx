@@ -1,27 +1,34 @@
 import './App.css';
 
-import * as React from 'react';
+import React, {useState} from 'react';
 
 import useConfig from './components/useConfig';
 import logo from './logo.svg';
-import Home from './home/Home';
+import Home from './Home';
+import Resume from './Resume';
 import CssBaseline from '@mui/material/CssBaseline';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-/**
- * Our Web Application
- */
 
-const buttonNames = ['Home', 'Resume', 'Extra']
-const buttons = buttonNames.map((b) => {
-  return <Button key={b} sx={{ bgcolor: '#617ec3', color: '#ddefff', height: '50px', fontSize: '18px', letterSpacing: '1px'}}>{b}</Button>
-});
+
 
 export default function App() {
   const config = useConfig();
+  const [page, setPage] = useState('home')
+  const buttonNames = ['Home', 'Resume', 'Extra']
+
+  function handleClick(event: any) {
+    setPage(event.currentTarget.name)
+    console.log(page)
+  }
+
+  const buttons = buttonNames.map((b) => {
+    return <Button onClick={handleClick} key={b} name={b} sx={{ bgcolor: '#617ec3', color: '#ddefff', height: '50px', fontSize: '18px', letterSpacing: '1px'}}>{b}</Button>
+  });
+
+
   return (
     <div className='App'>
       <CssBaseline />
@@ -32,7 +39,7 @@ export default function App() {
         <p className='App-intro'>
         To get started, edit <code>src/App.tsx</code> and save to reload.
       </p> */}
-      <Container maxWidth='sm' sx={{ position: 'relative' }}>
+      <Container maxWidth='lg' sx={{ position: 'relative', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
         <ButtonGroup
           orientation='vertical'
           aria-label='vertical outlined button group'
@@ -41,9 +48,9 @@ export default function App() {
         >
           {buttons}
         </ButtonGroup>
-        <Box sx={{ bgcolor: '#495a81', height: 'auto', margin: '80px 0', borderRadius: '10px', padding: '10px' }}>
-          <Home></Home>
-        </Box>
+        <Home></Home>
+        {page === 'resume' ? <Resume></Resume> : console.log('nothing')}
+        <Resume></Resume>
       </Container>
     </div>
   );
