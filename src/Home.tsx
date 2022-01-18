@@ -24,7 +24,7 @@ export default function Home(props: any) {
         orientation='vertical'
         aria-label='vertical outlined button group'
         variant='contained'
-        sx={{ color: '#495a81', position: 'absolute', left: '-10.5%', top: '80px', width: '130px', height: 'auto', zIndex: 1}}
+        sx={{ color: '#495a81', position: 'absolute', left: '-10.5%', top: '80px', width: 'min(140px, 26%)', height: 'auto', zIndex: 1}}
       >
         {buttons}
       </ButtonGroup>
@@ -35,7 +35,7 @@ export default function Home(props: any) {
       <Typography variant='h5' component='div' gutterBottom sx={{color: '#cfe6fa', fontStyle: 'italic'}}>
         web designer & developer
       </Typography>
-      <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#434363', margin: '30px 0'}}/>
+      <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '30px 0'}}/>
       <Typography variant='body1' component='div' gutterBottom sx={{color: '#cfe6fa'}}>
         Former marine biologist / Bering Sea survivor turned webdev. <br/> Enjoys building React apps and designing backend architecture. <br/> Please hire him.
       </Typography>

@@ -20,10 +20,10 @@ export default function App() {
   let flexDirection = 'row'
   let resumeStyles = {
     width: '50%',
-    margin: '80px 0'
+    margin: '80px 5px'
   }
   let homeStyles = {
-    margin: '80px 10px'
+    margin: '80px 5px'
   }
   if (typeof window !== "undefined") {
     // Client-side-only code
@@ -42,7 +42,7 @@ export default function App() {
       flexDirection = 'column';
       resumeStyles.width = 'clamp(380px, 60%, 560px)';
       resumeStyles.margin = '5px 0';
-      homeStyles.margin = '80px 0 5px 0'
+      homeStyles.margin = '80px 5px 5px 5px'
     }
   }
 
