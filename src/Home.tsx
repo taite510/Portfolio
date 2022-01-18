@@ -9,32 +9,47 @@ import Divider from '@mui/material/Divider';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Link from '@mui/material/Link';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
 
-export default function Home() {
+export default function Home(props: any) {
+  const buttonNames = ['Home', 'Resume', 'Extra']
+  const buttons = buttonNames.map((b) => {
+    return <Button onClick={props.click} key={b} name={b} sx={{ bgcolor: '#617ec3', color: '#ddefff', height: '50px', fontSize: '18px', letterSpacing: '1px'}}>{b}</Button>
+  });
+
   return (
-      <Box sx={{ bgcolor: '#495a81', height: '665px', margin: '80px 10px', borderRadius: '10px', padding: '30px' }}>
-        <Avatar alt='Taite Jernigan' src={myAvatar}  sx={{ width: 250, height: 250, margin: 'auto'}}/>
-        <Typography variant='h3' component='div' sx={{color: '#cfe6fa'}}>
-          Hi, I'm <b style={{color: '#09203d'}}>Taite Jernigan</b>
+    <Box sx={{ bgcolor: '#495a81', height: 'auto', width: 'clamp(380px, 60%, 560px)', margin: props.styles.margin, borderRadius: '10px', padding: '30px', position: 'relative'}}>
+      <ButtonGroup
+        orientation='vertical'
+        aria-label='vertical outlined button group'
+        variant='contained'
+        sx={{ color: '#495a81', position: 'absolute', left: '-10.5%', top: '80px', width: '130px', height: 'auto', zIndex: 1}}
+      >
+        {buttons}
+      </ButtonGroup>
+      <Avatar alt='Taite Jernigan' src={myAvatar}  sx={{ width: 250, height: 250, margin: 'auto'}}/>
+      <Typography variant='h3' component='div' sx={{color: '#cfe6fa'}}>
+        Hi, I'm <b style={{color: '#09203d'}}>Taite Jernigan</b>
+      </Typography>
+      <Typography variant='h5' component='div' gutterBottom sx={{color: '#cfe6fa', fontStyle: 'italic'}}>
+        web designer & developer
+      </Typography>
+      <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#434363', margin: '30px 0'}}/>
+      <Typography variant='body1' component='div' gutterBottom sx={{color: '#cfe6fa'}}>
+        Former marine biologist / Bering Sea survivor turned webdev. <br/> Enjoys building React apps and designing backend architecture. <br/> Please hire him.
+      </Typography>
+      <Box sx={{ bgcolor: '#546da6', height: 'auto', borderRadius: '5px', padding: '10px', margin: '20px 0' }}>
+        <Typography variant='subtitle1' component='div' sx={{color: '#cfe6fa', fontSize: '1.05rem'}}>
+          email: taite5100@gmail.com &nbsp;&nbsp;<b>/</b>&nbsp;&nbsp; phone: (562) 852-2919
         </Typography>
-        <Typography variant='h5' component='div' gutterBottom sx={{color: '#cfe6fa', fontStyle: 'italic'}}>
-          web designer & developer
-        </Typography>
-        <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#434363', margin: '30px 0'}}/>
-        <Typography variant='body1' component='div' gutterBottom sx={{color: '#cfe6fa'}}>
-          Former marine biologist / Bering Sea survivor turned webdev. <br/> Enjoys building React apps and designing backend architecture. <br/> Please hire him.
-        </Typography>
-        <Box sx={{ bgcolor: '#546da6', height: 'auto', borderRadius: '5px', padding: '10px', margin: '20px 0' }}>
-          <Typography variant='subtitle1' component='div' sx={{color: '#cfe6fa', fontSize: '1.05rem'}}>
-            email: taite5100@gmail.com &nbsp;&nbsp;<b>/</b>&nbsp;&nbsp; phone: (562) 852-2919
-          </Typography>
-        </Box>
-        <Link href='https://github.com/taite510' target='_blank' sx={{color: '#09203d', margin: '0 20px'}}>
-          <GitHubIcon fontSize='large'/>
-        </Link>
-        <Link href='https://www.linkedin.com/in/taite-jernigan/' target='_blank' sx={{color: '#09203d', margin: '0 20px'}}>
-          <LinkedInIcon fontSize='large'/>
-        </Link>
       </Box>
+      <Link href='https://github.com/taite510' target='_blank' sx={{color: '#09203d', margin: '0 20px'}}>
+        <GitHubIcon fontSize='large'/>
+      </Link>
+      <Link href='https://www.linkedin.com/in/taite-jernigan/' target='_blank' sx={{color: '#09203d', margin: '0 20px'}}>
+        <LinkedInIcon fontSize='large'/>
+      </Link>
+    </Box>
   )
 }
