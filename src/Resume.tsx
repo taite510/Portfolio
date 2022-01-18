@@ -8,6 +8,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import resumeData from './resumeData';
 import DirectionsBoatIcon from '@mui/icons-material/DirectionsBoat';
 import CodeIcon from '@mui/icons-material/Code';
+import Link from '@mui/material/Link';
 
 function mapResume(type: any) {
   let arr = type.map((data: any) => {
@@ -28,21 +29,16 @@ const projects = mapResume(resumeData.projects)
 
 export default function Resume(props: any) {
 
-  function onDownload() {
-    const link = document.createElement("a");
-    link.download = `Tatie Jernigan Resume.docx`;
-    link.href = "./Taite Jernigan Resume.docx";
-    link.click();
-  }
-
   return (
     <Box sx={{ bgcolor: '#495a81', height: '665px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', width: props.styles.width, overflow: 'auto'}}>
       <Typography variant='h4' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>Resume</Typography>
       <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '10px 0 10px 0'}}/>
-      <Button onClick={onDownload} sx={{ color: '#ddefff', marginTop: '5px'}}>
-        <FileDownloadIcon/>
-        Download My Resume
-      </Button>
+      <Link href='https://drive.google.com/uc?export=download&id=1fyFYnY8xmEi1DZoYEaAxisd_ggyqP38Q' download='Taite Jernigan Resume.pdf' underline='none'>
+        <Button  sx={{ color: '#ddefff', marginTop: '5px'}}>
+          <FileDownloadIcon/>
+          Download My Resume
+        </Button>
+      </Link>
       <Typography variant='h5' component='div' sx={{ color: '#86c7ff', textAlign: 'left', margin: '20px 0 5px 0' }}>
         <SchoolIcon fontSize='large' sx={{ verticalAlign: 'bottom'}}/>
         &nbsp; Education
