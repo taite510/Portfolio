@@ -19,7 +19,7 @@ export default function Home(props: any) {
   });
 
   return (
-    <Box sx={{ bgcolor: '#495a81', height: 'auto', width: 'clamp(380px, 60%, 560px)', margin: props.styles.margin, borderRadius: '10px', padding: '30px', position: 'relative'}}>
+    <Box sx={{ bgcolor: '#495a81', height: 'auto', width: '560px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', position: 'relative'}}>
       <ButtonGroup
         orientation='vertical'
         aria-label='vertical outlined button group'
