@@ -1,18 +1,10 @@
 import './App.css';
-
 import React, {useState, useEffect} from 'react';
-
 import useConfig from './components/useConfig';
-import logo from './logo.svg';
 import Home from './Home';
 import Resume from './Resume';
 import CssBaseline from '@mui/material/CssBaseline';
-
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-
-
 
 export default function App() {
   const config = useConfig();
@@ -45,8 +37,6 @@ export default function App() {
   function handleClick(event: any) {
     setPage(event.currentTarget.name)
   }
-
-
 
   return (
     <div className='App'>

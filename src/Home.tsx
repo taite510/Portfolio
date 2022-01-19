@@ -11,6 +11,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Link from '@mui/material/Link';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
 
 export default function Home(props: any) {
   const buttonNames = ['Home', 'Resume', 'Extra']
@@ -19,7 +20,7 @@ export default function Home(props: any) {
   });
 
   return (
-    <Box sx={{ bgcolor: '#495a81', height: 'auto', width: '560px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', position: 'relative'}}>
+    <Paper elevation={8} sx={{ bgcolor: '#495a81', height: 'auto', width: '560px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', position: 'relative'}}>
       <ButtonGroup
         orientation='vertical'
         aria-label='vertical outlined button group'
@@ -50,6 +51,6 @@ export default function Home(props: any) {
       <Link href='https://www.linkedin.com/in/taite-jernigan/' target='_blank' sx={{color: '#09203d', margin: '0 20px'}}>
         <LinkedInIcon fontSize='large'/>
       </Link>
-    </Box>
+    </Paper>
   )
 }

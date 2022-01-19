@@ -9,8 +9,8 @@ import resumeData from './resumeData';
 import DirectionsBoatIcon from '@mui/icons-material/DirectionsBoat';
 import CodeIcon from '@mui/icons-material/Code';
 import Link from '@mui/material/Link';
-import Slide from '@mui/material/Slide';
 import Collapse from '@mui/material/Collapse';
+import Paper from '@mui/material/Paper';
 
 function mapResume(type: any) {
   let arr = type.map((data: any) => {
@@ -19,7 +19,7 @@ function mapResume(type: any) {
         <Typography variant='h6' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>{data.title}</Typography>
         <Typography variant='caption' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left', fontStyle: 'italic'}}>{data.caption}</Typography>
         <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '5px 0 10px 0'}}/>
-        <Typography variant='body2' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>{data.description}</Typography>
+        <Typography variant='body2' component='div' sx={{ color: '#cfe6fa', textAlign: 'left' }}>{data.description}</Typography>
       </Box>
     )
   })
@@ -32,7 +32,7 @@ const projects = mapResume(resumeData.projects)
 export default function Resume(props: any) {
   return (
     <Collapse in={props.styles.display} orientation='horizontal' timeout={600}>
-      <Box sx={{ bgcolor: '#495a81', height: '665px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', width: '560px', overflow: 'auto'}}>
+      <Paper elevation={8} sx={{ bgcolor: '#495a81', height: '665px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', width: '560px', overflow: 'auto'}}>
         <Typography variant='h4' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>Resume</Typography>
         <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '10px 0 10px 0'}}/>
         <Link href='https://drive.google.com/uc?export=download&id=1fyFYnY8xmEi1DZoYEaAxisd_ggyqP38Q' download='Taite Jernigan Resume.pdf' underline='none'>
@@ -56,7 +56,7 @@ export default function Resume(props: any) {
           &nbsp; Projects
         </Typography>
         { projects }
-      </Box>
+      </Paper>
     </Collapse>
   )
 }
