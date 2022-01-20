@@ -41,7 +41,8 @@ const html = ({
     </head>
     <body>
       <div id="root">${content}</div>
-      ${stats.scripts.map(filename => `<script src="${config.app.DIST_URL}/${filename}" crossorigin></script>`).join('\n')}
+      <!-- removed 'crossorigin' from script tag below to sidestep CORS error (unsure if important) -->
+      ${stats.scripts.map(filename => `<script src="${config.app.DIST_URL}/${filename}" ></script>`).join('\n')}
     </body>
   </html>`
 
