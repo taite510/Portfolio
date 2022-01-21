@@ -3,8 +3,10 @@ import React, {useState, useEffect} from 'react';
 import useConfig from './components/useConfig';
 import Home from './Home';
 import Resume from './Resume';
+import Extra from './Extra'
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
+import myBackground from '../public/photos/background.webp'
 
 export default function App() {
   const config = useConfig();
@@ -13,6 +15,9 @@ export default function App() {
   let resumeStyles = {
     margin: '80px 5px',
     display: page === 'Resume'
+  }
+  let extraStyles = {
+    display: page === 'Extra'
   }
   console.log(resumeStyles.display)
   let homeStyles = {
@@ -40,11 +45,12 @@ export default function App() {
 
   return (
     <div className='App'>
+      <img src={myBackground} id="bg" alt=""></img>
       <CssBaseline />
       <Container maxWidth='lg' sx={{ position: 'relative', display: 'flex', flexDirection: flexDirection, justifyContent: 'center', alignItems: 'center'}}>
-
         <Home click={handleClick} styles={homeStyles}></Home>
         <Resume styles={resumeStyles}></Resume>
+        <Extra styles={extraStyles}></Extra>
       </Container>
     </div>
   );
