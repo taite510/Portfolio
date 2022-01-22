@@ -14,7 +14,7 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 
 export default function Home(props: any) {
-  const buttonNames = ['Home', 'Resume', 'Extra']
+  const buttonNames = ['Home', 'Resume', 'About', 'Projects', 'Extra']
   const buttons = buttonNames.map((b) => {
     return <Button onClick={props.click} key={b} name={b} sx={{ bgcolor: '#617ec3', color: '#ddefff', height: '50px', fontSize: '18px', letterSpacing: '1px'}}>{b}</Button>
   });
@@ -25,11 +25,11 @@ export default function Home(props: any) {
         orientation='vertical'
         aria-label='vertical outlined button group'
         variant='contained'
-        sx={{ color: '#495a81', position: 'absolute', left: '-10.5%', top: '80px', width: 'min(140px, 26%)', height: 'auto', zIndex: 1}}
+        sx={{ color: '#495a81', position: 'absolute', left: '-10.5%', top: '50px', width: 'min(140px, 26%)', height: 'auto', zIndex: 1}}
       >
         {buttons}
       </ButtonGroup>
-      <Avatar alt='Taite Jernigan' src={myAvatar}  sx={{ width: 250, height: 250, margin: 'auto'}}/>
+      <Avatar alt='Taite Jernigan' src={myAvatar}  sx={{ width: '270px', height: '270px', margin: '10px auto 30px auto', border: '5px solid #546da6'}}/>
       <Typography variant='h3' component='div' sx={{color: '#cfe6fa'}}>
         Hi, I'm <b style={{color: '#09203d'}}>Taite Jernigan</b>
       </Typography>
@@ -42,7 +42,7 @@ export default function Home(props: any) {
       </Typography>
       <Box sx={{ bgcolor: '#546da6', height: 'auto', borderRadius: '5px', padding: '10px', margin: '20px 0' }}>
         <Typography variant='subtitle1' component='div' sx={{color: '#cfe6fa', fontSize: '1.05rem'}}>
-          email: taite5100@gmail.com &nbsp;&nbsp;<b>/</b>&nbsp;&nbsp; phone: (562) 852-2919
+          email: taite5100@gmail.com
         </Typography>
       </Box>
       <Link href='https://github.com/taite510' target='_blank' sx={{color: '#09203d', margin: '0 20px'}}>

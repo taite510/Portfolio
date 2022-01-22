@@ -62,7 +62,7 @@ export default function Extra(props: any) {
   }
   return (
     <Collapse in={props.styles.display} orientation='horizontal' timeout={600}>
-      <Paper elevation={8} sx={{ bgcolor: '#495a81', height: '665px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', width: '560px', overflow: 'auto'}}>
+      <Paper elevation={8} sx={{ bgcolor: '#495a81', height: '723px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', width: '560px', overflow: 'auto'}}>
         <Typography variant='h4' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>My Photos</Typography>
         <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '10px 0 10px 0'}}/>
         <ImageList
