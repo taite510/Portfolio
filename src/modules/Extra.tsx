@@ -10,12 +10,12 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 
 
-import pic1 from '../public/photos/pic1.webp';
-import pic2 from '../public/photos/pic2.webp';
-import pic3 from '../public/photos/pic3.webp';
-import pic4 from '../public/photos/pic4.webp';
-import pic5 from '../public/photos/pic5.webp';
-import pic6 from '../public/photos/pic6.webp';
+import pic1 from '../../public/photos/pic1.webp';
+import pic2 from '../../public/photos/pic2.webp';
+import pic3 from '../../public/photos/pic3.webp';
+import pic4 from '../../public/photos/pic4.webp';
+import pic5 from '../../public/photos/pic5.webp';
+import pic6 from '../../public/photos/pic6.webp';
 
 const picData = [
   {

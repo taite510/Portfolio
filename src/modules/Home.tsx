@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/react'
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
-import myAvatar from '../public/photos/taite.jpg'
+import myAvatar from '../../public/photos/taite.jpg'
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import GitHubIcon from '@mui/icons-material/GitHub';

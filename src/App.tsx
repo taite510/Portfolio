@@ -1,9 +1,11 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import useConfig from './components/useConfig';
-import Home from './Home';
-import Resume from './Resume';
-import Extra from './Extra'
+import Home from './modules/Home';
+import Resume from './modules/Resume';
+import Extra from './modules/Extra'
+import About from './modules/About'
+import Projects from './modules/Projects'
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import myBackground from '../public/photos/background.webp'
@@ -19,10 +21,16 @@ export default function App() {
   let extraStyles = {
     display: page === 'Extra'
   }
-  console.log(resumeStyles.display)
   let homeStyles = {
     margin: '80px 5px'
   }
+  let aboutStyles = {
+    display: page === 'About'
+  }
+  let projectStyles = {
+    display: page === 'Projects'
+  }
+
   if (typeof window !== "undefined") {
     const [pageSize, setPageSize] = useState(window.innerWidth > 1260)
     const updateMedia = () => {
@@ -50,6 +58,8 @@ export default function App() {
       <Container maxWidth='lg' sx={{ position: 'relative', display: 'flex', flexDirection: flexDirection, justifyContent: 'center', alignItems: 'center'}}>
         <Home click={handleClick} styles={homeStyles}></Home>
         <Resume styles={resumeStyles}></Resume>
+        <About styles={aboutStyles}></About>
+        <Projects styles={projectStyles}></Projects>
         <Extra styles={extraStyles}></Extra>
       </Container>
     </div>
