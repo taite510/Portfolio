@@ -31,18 +31,18 @@ export default function Home(props: any) {
       </ButtonGroup>
       <Avatar alt='Taite Jernigan' src={myAvatar}  sx={{ width: '270px', height: '270px', margin: '10px auto 30px auto', border: '5px solid #546da6'}}/>
       <Typography variant='h3' component='div' sx={{color: '#cfe6fa'}}>
-        Hi, I'm <b style={{color: '#09203d'}}>Taite Jernigan</b>
+        Hi, I'm <b style={{color: '#000'}}>Taite Jernigan</b>
       </Typography>
       <Typography variant='h5' component='div' gutterBottom sx={{color: '#cfe6fa', fontStyle: 'italic'}}>
         web designer & developer
       </Typography>
       <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '30px 0'}}/>
       <Typography variant='body1' component='div' gutterBottom sx={{color: '#cfe6fa'}}>
-        Former marine biologist / Bering Sea survivor turned webdev. <br/> Enjoys building React apps and designing backend architecture. <br/> Please hire him.
+        Former marine biologist / Bering Sea survivor turned webdev. <br/> I enjoy building React apps and designing backend architecture. <br/> Intrested in working together? Please contact me via email.
       </Typography>
       <Box sx={{ bgcolor: '#546da6', height: 'auto', borderRadius: '5px', padding: '10px', margin: '20px 0' }}>
         <Link href='mailto:taite5100@gmail.com' underline='none'>
-          <Typography variant='subtitle1' component='div' sx={{color: '#cfe6fa', fontSize: '1.05rem'}}>
+          <Typography variant='subtitle1' component='div' sx={{color: '#e8f4ff', fontSize: '1.05rem'}}>
             email: taite5100@gmail.com
           </Typography>
         </Link>

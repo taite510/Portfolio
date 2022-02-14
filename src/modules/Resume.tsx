@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import SchoolIcon from '@mui/icons-material/School';
-import resumeData from '../resumeData';
+import resumeData from '../../public/data/resumeData';
 import DirectionsBoatIcon from '@mui/icons-material/DirectionsBoat';
 import CodeIcon from '@mui/icons-material/Code';
 import Link from '@mui/material/Link';
