@@ -41,9 +41,11 @@ export default function Home(props: any) {
         Former marine biologist / Bering Sea survivor turned webdev. <br/> Enjoys building React apps and designing backend architecture. <br/> Please hire him.
       </Typography>
       <Box sx={{ bgcolor: '#546da6', height: 'auto', borderRadius: '5px', padding: '10px', margin: '20px 0' }}>
-        <Typography variant='subtitle1' component='div' sx={{color: '#cfe6fa', fontSize: '1.05rem'}}>
-          email: taite5100@gmail.com
-        </Typography>
+        <Link href='mailto:taite5100@gmail.com' underline='none'>
+          <Typography variant='subtitle1' component='div' sx={{color: '#cfe6fa', fontSize: '1.05rem'}}>
+            email: taite5100@gmail.com
+          </Typography>
+        </Link>
       </Box>
       <Link href='https://github.com/taite510' target='_blank' sx={{color: '#09203d', margin: '0 20px'}}>
         <GitHubIcon fontSize='large'/>
