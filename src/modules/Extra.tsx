@@ -9,56 +9,19 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 
+import pictures from '../../public/data/photoData';
 
-import pic1 from '../../public/photos/pic1.webp';
-import pic2 from '../../public/photos/pic2.webp';
-import pic3 from '../../public/photos/pic3.webp';
-import pic4 from '../../public/photos/pic4.webp';
-import pic5 from '../../public/photos/pic5.webp';
-import pic6 from '../../public/photos/pic6.webp';
-
-const picData = [
-  {
-    img: pic1,
-    name: 'pic1',
-    title: 'Rosy Boa',
-  },
-  {
-    img: pic2,
-    name: 'pic2',
-    title: 'Long-nosed Snake',
-  },
-  {
-    img: pic3,
-    name: 'pic3',
-    title: 'Speckled Rattlesnake',
-  },
-  {
-    img: pic4,
-    name: 'pic4',
-    title: 'Citrus Cicada',
-  },
-  {
-    img: pic5,
-    name: 'pic5',
-    title: 'Blainville\'s Horned Lizard',
-  },
-  {
-    img: pic6,
-    name: 'pic6',
-    title: 'California Tree Frog',
-  }
-];
+let extraPics = pictures.extra
 
 export default function Extra(props: any) {
-  const [open, setOpen] = useState({img: 'nothing', isOpen: false})
+  const [open, setOpen] = useState({img: 'none', isOpen: false})
 
   const handleOpen = (event: any) => {
-    console.log('check')
-    setOpen({img: event.currentTarget.id, isOpen: true})
+    console.log(event.currentTarget.children[0].id)
+    setOpen({img: event.currentTarget.children[0].id, isOpen: true})
   }
   const handleClose = () => {
-    setOpen({img: 'nothing', isOpen: false})
+    setOpen({img: 'none', isOpen: false})
   }
   return (
     <Collapse in={props.styles.display} orientation='horizontal' timeout={600}>
@@ -70,33 +33,48 @@ export default function Extra(props: any) {
           cols={2}
           variant='masonry'
         >
-          {picData.map(item => {
-            return (
-              <ImageListItem key={item.img} onClick={handleOpen} >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  id={item.name}
-                />
-                  <ImageListItemBar
-                    sx={{
-                      background:
-                        'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                        'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-                    }}
-                    title={item.title}
-                    position='top'
-                  >
-                  </ImageListItemBar>
-              </ImageListItem>
-            )
+          {Object.keys(extraPics).map(item => {
+            console.log(item)
+            if (item !== 'none') {
+              return (
+                <ImageListItem key={item} onClick={handleOpen} >
+                  <img
+                    src={(extraPics as any)[item].img}
+                    alt={(extraPics as any)[item].title}
+                    id={item}
+                  />
+                    <ImageListItemBar
+                      sx={{
+                        background:
+                          'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                          'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+                      }}
+                      title={(extraPics as any)[item].title}
+                      position='top'
+                    >
+                    </ImageListItemBar>
+                </ImageListItem>
+              )
+            }
           })}
         </ImageList>
       </Paper>
       <Modal open={open.isOpen} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <Box>
-          <img src='https://imgur.com/OQKhJSk.jpeg'></img>
-        </Box>
+          <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto', height: 'auto' }}>
+            <ImageListItem>
+                  <img src={(extraPics as any)[open.img].link}/>
+                    <ImageListItemBar
+                      sx={{
+                        background:
+                          'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                          'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+                      }}
+                      title={(extraPics as any)[open.img].title}
+                      position='top'
+                    >
+                    </ImageListItemBar>
+                </ImageListItem>
+          </Box>
       </Modal>
     </Collapse>
   )
