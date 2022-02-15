@@ -4,6 +4,7 @@ import Divider from '@mui/material/Divider';
 import Collapse from '@mui/material/Collapse';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import lambdaLogo from '../../public/icons/awsLambda.svg'
 import reactLogo from '../../public/icons/react.svg'
 import serverlessLogo from '../../public/icons/serverless.svg'
@@ -19,11 +20,21 @@ export default function About(props: any) {
         <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '10px 0 10px 0'}}/>
         <Box sx={{ bgcolor: '#546da6', height: 'auto', padding: '10px 20px', margin: '20px 0' }}>
           <div className='logos'>
-            <img src={lambdaLogo} alt='AWS Lambda Logo'></img>
-            <img src={reactLogo} alt='React Logo'></img>
-            <img src={serverlessLogo} alt='Serverless Logo'></img>
-            <img src={typescriptLogo} alt='Typescript Logo'></img>
-            <img src={materialUILogo} alt='Material-UI Logo'></img>
+            <Link href='https://aws.amazon.com/lambda/' target='_blank'>
+              <img src={lambdaLogo} alt='AWS Lambda Logo'></img>
+            </Link>
+            <Link href='https://reactjs.org/' target='_blank'>
+              <img src={reactLogo} alt='React Logo'></img>
+            </Link>
+            <Link href='https://www.serverless.com/' target='_blank'>
+              <img src={serverlessLogo} alt='Serverless Logo'></img>
+            </Link>
+            <Link href='https://www.typescriptlang.org/' target='_blank'>
+              <img src={typescriptLogo} alt='Typescript Logo'></img>
+            </Link>
+            <Link href='https://mui.com/' target='_blank'>
+              <img src={materialUILogo} alt='Material-UI Logo'></img>
+            </Link>
           </div>
           <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '5px 0 10px 0'}}/>
           <Typography variant='body1' component='div' sx={{ color: '#e8f4ff', textAlign: 'left' }}>
