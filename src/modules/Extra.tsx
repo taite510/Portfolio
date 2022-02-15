@@ -42,6 +42,7 @@ export default function Extra(props: any) {
                     src={(extraPics as any)[item].img}
                     alt={(extraPics as any)[item].title}
                     id={item}
+                    loading="lazy"
                   />
                     <ImageListItemBar
                       sx={{
