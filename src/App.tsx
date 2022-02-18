@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import useConfig from './components/useConfig';
 import Home from './modules/Home';
 import Resume from './modules/Resume';
-import Extra from './modules/Extra'
+import Hobbies from './modules/Hobbies'
 import About from './modules/About'
 import Projects from './modules/Projects'
 import CssBaseline from '@mui/material/CssBaseline';
@@ -19,7 +19,7 @@ export default function App() {
     display: page === 'Resume'
   }
   let extraStyles = {
-    display: page === 'Extra'
+    display: page === 'Hobbies'
   }
   let homeStyles = {
     margin: '80px 5px'
@@ -60,7 +60,7 @@ export default function App() {
         <Resume styles={resumeStyles}></Resume>
         <About styles={aboutStyles}></About>
         <Projects styles={projectStyles}></Projects>
-        <Extra styles={extraStyles}></Extra>
+        <Hobbies styles={extraStyles}></Hobbies>
       </Container>
     </div>
   );

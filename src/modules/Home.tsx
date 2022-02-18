@@ -1,6 +1,4 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react'
+import React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import myAvatar from '../../public/photos/taite.jpg'
@@ -14,7 +12,7 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 
 export default function Home(props: any) {
-  const buttonNames = ['Home', 'Resume', 'About', 'Projects', 'Extra']
+  const buttonNames = ['Home', 'Resume', 'About', 'Projects', 'Hobbies']
   const buttons = buttonNames.map((b) => {
     return <Button onClick={props.click} key={b} name={b} sx={{ bgcolor: '#617ec3', color: '#ddefff', height: '50px', fontSize: '18px', letterSpacing: '1px'}}>{b}</Button>
   });
