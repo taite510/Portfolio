@@ -19,7 +19,6 @@ export default function About(props: any) {
   const [open, setOpen] = useState({img: 'none', isOpen: false})
 
   const handleOpen = (event: any) => {
-    console.log(event.currentTarget.children[0].id)
     setOpen({img: event.currentTarget.children[0].id, isOpen: true})
   }
   const handleClose = () => {
@@ -40,7 +39,6 @@ export default function About(props: any) {
           cols={3}
         >
           {Object.keys(projectPics).map(item => {
-            console.log(item)
             if (item !== 'none') {
               return (
                 <ImageListItem key={item} onClick={handleOpen}>

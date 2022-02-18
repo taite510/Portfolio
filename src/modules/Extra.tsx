@@ -17,7 +17,6 @@ export default function Extra(props: any) {
   const [open, setOpen] = useState({img: 'none', isOpen: false})
 
   const handleOpen = (event: any) => {
-    console.log(event.currentTarget.children[0].id)
     setOpen({img: event.currentTarget.children[0].id, isOpen: true})
   }
   const handleClose = () => {
@@ -34,7 +33,6 @@ export default function Extra(props: any) {
           variant='masonry'
         >
           {Object.keys(extraPics).map(item => {
-            console.log(item)
             if (item !== 'none') {
               return (
                 <ImageListItem key={item} onClick={handleOpen} >
