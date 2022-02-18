@@ -16,9 +16,9 @@ export default function Home(props: any) {
   const buttons = buttonNames.map((b) => {
     return <Button onClick={props.click} key={b} name={b} sx={{ bgcolor: '#617ec3', color: '#ddefff', height: '50px', fontSize: '18px', letterSpacing: '1px'}}>{b}</Button>
   });
-
+  const styles = props.styles;
   return (
-    <Paper elevation={8} sx={{ bgcolor: '#495a81', height: 'auto', width: '560px', margin: props.styles.margin, borderRadius: '10px', padding: '30px', position: 'relative'}}>
+    <Paper elevation={8} sx={{ bgcolor: '#495a81', height: 'auto', width: styles.width, margin: styles.margin, borderRadius: '10px', padding: '30px', position: 'relative'}}>
       <ButtonGroup
         orientation='vertical'
         aria-label='vertical outlined button group'
