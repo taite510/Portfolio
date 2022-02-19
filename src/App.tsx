@@ -9,7 +9,7 @@ import Projects from './modules/Projects'
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import myBackground from '../public/photos/background.webp'
-import { isMobile, isBrowser } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 
 export default function App() {
@@ -22,12 +22,13 @@ export default function App() {
       allStyles: {
         width: '560px',
         height: '723px',
-        margin: '80px 5px',
+        margin: 'max(20px, 4%) 5px',
+        padding: '30px',
         overflow: 'auto',
         orientation: 'horizontal'
       },
       homeStyles: {
-
+        avatarMargin: '10px auto 30px auto'
       },
       resumeStyles: {
         display: page === 'Resume'
@@ -47,12 +48,13 @@ export default function App() {
       allStyles: {
         width: '100%',
         height: 'auto',
-        margin: '40px 0 0 0',
+        margin: '20px 0',
+        padding: '15px',
         overflow: 'visible',
         orientation: 'vertical'
       },
       homeStyles: {
-
+        avatarMargin: '10px auto 15px auto',
       },
       resumeStyles: {
         display: page === 'Resume'
@@ -93,15 +95,15 @@ export default function App() {
   })
 
   function handleClick(event: any) {
-    setPage(event.currentTarget.name)
+    setPage(event.target.getAttribute('name'))
   }
 
   return (
     <div className='App'>
       <img src={myBackground} id="bg" alt=""></img>
       <CssBaseline />
-      <Container maxWidth='lg' sx={{ position: 'relative', display: 'flex', flexDirection: (styles as any)[display].flexDirection, justifyContent: 'center', alignItems: 'center'}}>
-        <Home click={handleClick} styles={Object.assign((styles as any)[display].homeStyles, (styles as any)[display].allStyles)}></Home>
+      <Container maxWidth='lg' sx={{ padding: '10px', position: 'relative', display: 'flex', flexDirection: (styles as any)[display].flexDirection, justifyContent: 'center', alignItems: 'center'}}>
+        <Home click={handleClick} display={display} styles={Object.assign((styles as any)[display].homeStyles, (styles as any)[display].allStyles)}></Home>
         <Resume styles={Object.assign((styles as any)[display].resumeStyles, (styles as any)[display].allStyles)}></Resume>
         <About styles={Object.assign((styles as any)[display].aboutStyles, (styles as any)[display].allStyles)}></About>
         <Projects styles={Object.assign((styles as any)[display].projectStyles, (styles as any)[display].allStyles)}></Projects>

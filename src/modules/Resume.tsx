@@ -33,7 +33,7 @@ export default function Resume(props: any) {
   const styles = props.styles
   return (
     <Collapse in={styles.display} orientation={styles.orientation} timeout={600}>
-      <Paper elevation={8} sx={{ bgcolor: '#495a81', height: styles.height, margin: styles.margin, borderRadius: '10px', padding: '30px', width: styles.width, overflow: styles.overflow}}>
+      <Paper elevation={8} sx={{ bgcolor: '#495a81', height: styles.height, margin: styles.margin, borderRadius: '10px', padding: styles.padding, width: styles.width, overflow: styles.overflow}}>
         <Typography variant='h4' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>Resume</Typography>
         <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '10px 0 10px 0'}}/>
         <Link href='https://drive.google.com/uc?export=download&id=1cC2EDOjec1jofFEgM5wQDfEVSIUb9THw' download='Taite Jernigan Resume.pdf' underline='none'>
