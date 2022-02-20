@@ -21,26 +21,29 @@ export default function App() {
       flexDirection: 'row',
       allStyles: {
         width: '560px',
-        height: '723px',
+        height: '718px',
         margin: 'max(20px, 4%) 5px',
         padding: '30px',
         overflow: 'auto',
         orientation: 'horizontal'
       },
       homeStyles: {
-        avatarMargin: '10px auto 30px auto'
+        avatarMargin: '10px auto 20px auto'
       },
       resumeStyles: {
         display: page === 'Resume'
       },
       aboutStyles: {
-        display: page === 'About'
+        display: page === 'About',
+        iconSize: '13%'
       },
       projectStyles: {
-        display: page === 'Projects'
+        display: page === 'Projects',
+        picModalWidth: 'auto'
       },
       hobbyStyles: {
-        display: page === 'Hobbies'
+        display: page === 'Hobbies',
+        picModalWidth: 'auto'
       }
     },
     mobile: {
@@ -60,13 +63,16 @@ export default function App() {
         display: page === 'Resume'
       },
       aboutStyles: {
-        display: page === 'About'
+        display: page === 'About',
+        iconSize: '15%'
       },
       projectStyles: {
-        display: page === 'Projects'
+        display: page === 'Projects',
+        picModalWidth: '90%'
       },
       hobbyStyles: {
-        display: page === 'Hobbies'
+        display: page === 'Hobbies',
+        picModalWidth: '90%'
       }
     }
   }
