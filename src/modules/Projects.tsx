@@ -1,4 +1,5 @@
-import React, { useState }from 'react';
+import React, { useState } from 'react';
+import ProjectImageList from './ProjectImageList'
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Collapse from '@mui/material/Collapse';
@@ -39,35 +40,7 @@ export default function About(props: any) {
             <ShoppingBagIcon fontSize='large' sx={{ verticalAlign: 'bottom'}}/>
             &nbsp; Project Catwalk
           </Typography>
-          <ImageList
-            gap={4}
-            cols={3}
-          >
-            {Object.keys(projectPics).map(item => {
-              if (item !== 'none') {
-                return (
-                  <ImageListItem key={item} onClick={handleOpen}>
-                    <img
-                      src={(projectPics as any)[item].img}
-                      alt={(projectPics as any)[item].title}
-                      id={item}
-                      loading="lazy"
-                    />
-                      <ImageListItemBar
-                        sx={{
-                          background:
-                            'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                            'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-                        }}
-                        title={(projectPics as any)[item].title}
-                        position='top'
-                      >
-                      </ImageListItemBar>
-                  </ImageListItem>
-                )
-              }
-            })}
-          </ImageList>
+          <ProjectImageList handleOpen={handleOpen} project={'catwalk'}/>
           <Typography variant='body1' component='div' sx={{ color: '#cfe6fa', textAlign: 'left'}}>
           &emsp; For this project, I collaborated with a small team of engineers to create a fashion e-commerce site using <b>React</b>, <b>Node</b>, and <b>MySQL</b>. I was tasked with designing and implementing the frontend for the review section and the backend for the products section. The frontend was straightforward: process and display review metadata in a format that users could easily interpret and allow users to create their own reviews.
           <br/><br/>
@@ -77,6 +50,7 @@ export default function About(props: any) {
             <EditIcon fontSize='large' sx={{ verticalAlign: 'bottom'}}/>
             &nbsp; study.io
           </Typography>
+          <ProjectImageList handleOpen={handleOpen} project={'studyIO'}/>
           <ConstructionIcon sx={{fontSize: 60, margin: 'auto', color: '#86c7ff'}}/>
           <Typography variant='h6' sx={{color: '#86c7ff'}}>(under construction)</Typography>
         </Paper>
