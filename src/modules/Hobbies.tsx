@@ -33,7 +33,7 @@ export default function Hobbies(props: any) {
           <Typography variant='h4' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>Hobbies</Typography>
           <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '10px 0 10px 0'}}/>
           <Typography  component='p' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>
-          When I was young, I could often be found looking for insects and other critters in backyards and local parks. Nowadays that interest has grown into a hobby of mine: <b>herping</b>. This term, which is derived from the word Herpetology, is the act of searching for reptiles and amphibians. Think of it like the snake/lizard version of birding. Below are some photos of mine that were taken while I was herping.
+          &emsp; When I was young, I could often be found looking for insects and other critters in backyards and local parks. Nowadays that interest has grown into a hobby of mine: <b>herping</b>. This term, which is derived from the word Herpetology, is the act of searching for reptiles and amphibians. Think of it like the snake/lizard version of birding. Below are some photos of mine that were taken while I was herping.
           <br/><br/>
           <b>Note:</b> the hardest part is actually <i>finding</i> them!
 

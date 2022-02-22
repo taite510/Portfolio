@@ -68,6 +68,11 @@ export default function About(props: any) {
               }
             })}
           </ImageList>
+          <Typography variant='body1' component='div' sx={{ color: '#cfe6fa', textAlign: 'left'}}>
+          &emsp; For this project, I collaborated with a small team of engineers to create a fashion e-commerce site using <b>React</b>, <b>Node</b>, and <b>MySQL</b>. I was tasked with designing and implementing the frontend for the review section and the backend for the products section. The frontend was straightforward: process and display review metadata in a format that users could easily interpret and allow users to create their own reviews.
+          <br/><br/>
+          &emsp; The backend was a bit more interesting. I had endpoints that required multiple queries to different tables, returning the data in a complex nested form. Optimizing those endpoints down to only one query took effort and research along with a healthy dose of trial and error. The end result was a significant performance increase when stress testing.
+          </Typography>
           <Typography variant='h5' component='div' sx={{ color: '#86c7ff', textAlign: 'left', margin: '20px 0 5px 0' }}>
             <EditIcon fontSize='large' sx={{ verticalAlign: 'bottom'}}/>
             &nbsp; study.io
