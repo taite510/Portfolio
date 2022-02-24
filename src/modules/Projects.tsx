@@ -51,8 +51,11 @@ export default function About(props: any) {
             &nbsp; study.io
           </Typography>
           <ProjectImageList handleOpen={handleOpen} project={'studyIO'}/>
-          <ConstructionIcon sx={{fontSize: 60, margin: 'auto', color: '#86c7ff'}}/>
-          <Typography variant='h6' sx={{color: '#86c7ff'}}>(under construction)</Typography>
+          <Typography variant='body1' component='div' sx={{ color: '#cfe6fa', textAlign: 'left'}}>
+          &emsp;Study.io is an app that allows users to form or find study groups with others under any educational topic. I worked mainly on the backend for this project, leading a team of engineers to build out our API using <b>Express</b> and <b>PostgreSQL</b> while another team built the frontend. My past experience with SQL queries was helpful here, as we needed to flesh out over 25 different endpoints for our frontend team to use. The most interesting aspect of the backend to me was designing an authorization system to encrypt/salt a user's sensitive information with <b>Node’s</b> crypto module.
+          <br/><br/>
+          &emsp;Near the end of the project I worked on improving our app’s frontend performance. One of the techniques I used was adding text compression to our app, which reduced our time to first contentful paint from 3.9 to 1.3 seconds.
+          </Typography>
         </Paper>
         <Modal open={open.isOpen} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
             <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: styles.picModalWidth, height: 'auto' }}>
