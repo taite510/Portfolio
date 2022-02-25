@@ -51,27 +51,31 @@ export default function App() {
       allStyles: {
         width: '100%',
         height: 'auto',
-        margin: '20px 0',
         padding: '15px',
         overflow: 'visible',
         orientation: 'vertical'
       },
       homeStyles: {
         avatarMargin: '10px auto 15px auto',
+        margin: '0 0 10px 0',
       },
       resumeStyles: {
-        display: page === 'Resume'
+        display: page === 'Resume',
+        margin: '10px 0 5px 0',
       },
       aboutStyles: {
         display: page === 'About',
+        margin: '10px 0 5px 0',
         iconSize: '15%'
       },
       projectStyles: {
         display: page === 'Projects',
+        margin: '10px 0 5px 0',
         picModalWidth: '90%'
       },
       hobbyStyles: {
         display: page === 'Hobbies',
+        margin: '10px 0 5px 0',
         picModalWidth: '90%'
       }
     }
@@ -108,7 +112,7 @@ export default function App() {
     <div className='App'>
       <img src={myBackground} id="bg" alt=""></img>
       <CssBaseline />
-      <Container maxWidth='lg' sx={{ padding: '10px', position: 'relative', display: 'flex', flexDirection: (styles as any)[display].flexDirection, justifyContent: 'center', alignItems: 'center'}}>
+      <Container maxWidth='lg' sx={{ padding: '20px 10px 20px 10px', position: 'relative', display: 'flex', flexDirection: (styles as any)[display].flexDirection, justifyContent: 'center', alignItems: 'center'}}>
         <Home click={handleClick} display={display} styles={Object.assign((styles as any)[display].homeStyles, (styles as any)[display].allStyles)}></Home>
         <Resume styles={Object.assign((styles as any)[display].resumeStyles, (styles as any)[display].allStyles)}></Resume>
         <About styles={Object.assign((styles as any)[display].aboutStyles, (styles as any)[display].allStyles)}></About>

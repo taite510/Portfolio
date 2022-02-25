@@ -38,6 +38,34 @@ export default function Home(props: any) {
   const styles = props.styles;
   return (
     <ThemeProvider theme={theme}>
+      {props.display === 'mobile' ?
+      <div style={{position: 'sticky', top: '0', alignSelf: 'flex-start', height: 0, zIndex: 1 }}>
+      <Paper elevation={4} sx={{ bgcolor: '#617ec3', width: '75px' }}>
+        <Button
+          id="basic-button"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
+            <MenuIcon sx={{ fontSize: 40, color: '#09203d', verticalAlign: 'bottom' }}/>
+
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+          >
+          {menuItems}
+        </Menu>
+      </Paper>
+    </div> :
+      <></>
+      }
       <Paper elevation={8} sx={{ bgcolor: '#495a81', height: 'auto', width: styles.width, margin: styles.margin, borderRadius: '10px', padding: styles.padding, position: 'relative'}}>
         {props.display === 'browser' ?
           <ButtonGroup
@@ -48,31 +76,7 @@ export default function Home(props: any) {
           >
             {buttons}
           </ButtonGroup> :
-          <>
-            <Paper elevation={4} sx={{ position: 'fixed', left: '0', bgcolor: '#617ec3', width: '75px', zIndex: 1 }}>
-              <Button
-                id="basic-button"
-                aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-              >
-                  <MenuIcon sx={{ fontSize: 40, color: '#09203d', verticalAlign: 'bottom'}}/>
-
-              </Button>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  'aria-labelledby': 'basic-button',
-                }}
-                >
-                {menuItems}
-              </Menu>
-            </Paper>
-          </>
+          <></>
         }
         <Avatar alt='Taite Jernigan' src={myAvatar}  sx={{ width: 'clamp(220px, 60%, 270px)', height: 'clamp(220px, 50%, 270px)', margin: styles.avatarMargin, border: '5px solid #546da6'}}/>
           <Typography variant='h3' component='div' sx={{ size: styles.h3Size, color: '#cfe6fa'}}>
