@@ -8,12 +8,10 @@ import { Stats } from './types'
  */
 const html = ({
   stats,
-  content,
   config,
   css = ''
 }: {
   stats: Stats
-  content: string
   config: Config
   css?: string
 }): string => `<!DOCTYPE html>
@@ -35,7 +33,7 @@ const html = ({
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     </head>
     <body>
-      <div id="root">${content}</div>
+      <div id="root"></div>
       <!-- removed 'crossorigin' from script tag below to sidestep CORS error (unsure if important) -->
       ${stats.scripts.map(filename => `<script src="${config.app.DIST_URL}/${filename}" ></script>`).join('\n')}
     </body>

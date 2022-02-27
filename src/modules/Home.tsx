@@ -39,32 +39,31 @@ export default function Home(props: any) {
   return (
     <ThemeProvider theme={theme}>
       {props.display === 'mobile' ?
-      <div style={{position: 'sticky', top: '0', alignSelf: 'flex-start', height: 0, zIndex: 1 }}>
-      <Paper elevation={4} sx={{ bgcolor: '#617ec3', width: '75px' }}>
-        <Button
-          id="basic-button"
-          aria-controls={open ? 'basic-menu' : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
-          onClick={handleClick}
-        >
-            <MenuIcon sx={{ fontSize: 40, color: '#09203d', verticalAlign: 'bottom' }}/>
-
-        </Button>
-        <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button',
-          }}
-          >
-          {menuItems}
-        </Menu>
-      </Paper>
-    </div> :
-      <></>
+        <div style={{position: 'sticky', top: '0', alignSelf: 'flex-start', height: 0, zIndex: 1 }}>
+          <Paper elevation={4} sx={{ bgcolor: '#617ec3', width: '75px' }}>
+            <Button
+              id="basic-button"
+              aria-controls={open ? 'basic-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+            >
+              <MenuIcon sx={{ fontSize: 40, color: '#09203d', verticalAlign: 'bottom' }}/>
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+              >
+              {menuItems}
+            </Menu>
+          </Paper>
+        </div> :
+        <></>
       }
       <Paper elevation={8} sx={{ bgcolor: '#495a81', height: 'auto', width: styles.width, margin: styles.margin, borderRadius: '10px', padding: styles.padding, position: 'relative'}}>
         {props.display === 'browser' ?
@@ -91,7 +90,7 @@ export default function Home(props: any) {
             Former marine biologist / Bering Sea survivor turned webdev. I enjoy building React apps and designing backend architecture. Intrested in working together? Please contact me via email.
           </Typography>:
           <Typography variant='body1' component='div' gutterBottom sx={{color: '#cfe6fa'}}>
-              Former marine biologist / Bering Sea survivor turned webdev. <br/> I enjoy building React apps and designing backend architecture. <br/> Intrested in working together? Please contact me via email.
+              Former marine biologist / Bering Sea survivor turned webdev. <br/> I enjoy building React apps and designing backend architecture. <br/> Interested in working together? Please contact me via email.
           </Typography>
         }
         <Box sx={{ bgcolor: '#546da6', height: 'auto', borderRadius: '5px', padding: '10px', margin: '20px 0' }}>
