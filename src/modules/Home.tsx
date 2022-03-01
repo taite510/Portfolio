@@ -94,9 +94,9 @@ export default function Home(props: any) {
           </Typography>
         }
         <Box sx={{ bgcolor: '#546da6', height: 'auto', borderRadius: '5px', padding: '10px', margin: '20px 0' }}>
-          <Link href='mailto:taite5100@gmail.com' underline='none'>
+          <Link href='mailto:taitejernigan@gmail.com' underline='none'>
             <Typography variant='subtitle1' component='div' sx={{color: '#e8f4ff', fontSize: '1.05rem'}}>
-              email: taite5100@gmail.com
+              email: taitejernigan@gmail.com
             </Typography>
           </Link>
         </Box>
