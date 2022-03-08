@@ -81,22 +81,6 @@ export default function App() {
     }
   }
 
-  // if (typeof window !== "undefined") {
-  //   const [pageSize, setPageSize] = useState(window.innerWidth > 1260)
-  //   const updateMedia = () => {
-  //     setPageSize(window.innerWidth > 1260);
-  //   };
-  //   useEffect(() => {
-  //     window.addEventListener("resize", updateMedia);
-  //     return () => window.removeEventListener("resize", updateMedia);
-  //   });
-  //   if (!pageSize) {
-  //     flexDirection = 'column';
-  //     resumeStyles.margin = '5px 0';
-  //     homeStyles.margin = '80px 5px 5px 5px';
-  //   }
-  // }
-
   setTimeout(() => {
     if (isMobile && display === 'browser') {
       console.log('here')
@@ -110,7 +94,7 @@ export default function App() {
 
   return (
     <div className='App'>
-      <img src={myBackground} id="bg" alt=""></img>
+      <img src={myBackground} id='bg' alt=''></img>
       <CssBaseline />
       <Container maxWidth='lg' sx={{ padding: '20px 10px 20px 10px', position: 'relative', display: 'flex', flexDirection: (styles as any)[display].flexDirection, justifyContent: 'center', alignItems: 'center'}}>
         <Home click={handleClick} display={display} styles={Object.assign((styles as any)[display].homeStyles, (styles as any)[display].allStyles)}></Home>

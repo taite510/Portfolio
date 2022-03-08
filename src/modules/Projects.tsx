@@ -31,7 +31,7 @@ export default function About(props: any) {
   }
   const styles = props.styles;
   return (
-    <Collapse in={styles.display} orientation={styles.orientation} timeout={600}>
+    <Collapse in={styles.display} orientation={styles.orientation} timeout={600} data-testid='Projects'>
       <ThemeProvider theme={theme}>
         <Paper elevation={8} sx={{ bgcolor: '#495a81', height: styles.height, margin: styles.margin, borderRadius: '10px', padding: styles.padding, width: styles.width, overflow: styles.overflow}}>
           <Typography variant='h4' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>Projects</Typography>
