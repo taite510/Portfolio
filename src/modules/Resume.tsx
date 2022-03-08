@@ -17,9 +17,9 @@ let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function mapResume(type: any) {
-  let arr = type.map((data: any) => {
+  let arr = type.map((data: any, index: number) => {
     return (
-      <Box sx={{padding: '12px', margin: '12px 6px', borderStyle: 'double', borderColor: '#0a1f3d'}}>
+      <Box sx={{padding: '12px', margin: '12px 6px', borderStyle: 'double', borderColor: '#0a1f3d'}} key={index}>
         <Typography variant='h6' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left' }}>{data.title}</Typography>
         <Typography variant='caption' component='div' gutterBottom sx={{ color: '#cfe6fa', textAlign: 'left', fontStyle: 'italic'}}>{data.caption}</Typography>
         <Divider variant='middle' sx={{borderBottomWidth: '1.5px', borderColor: '#0a1f3d', margin: '5px 0 10px 0'}}/>
